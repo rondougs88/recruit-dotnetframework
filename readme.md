@@ -17,7 +17,7 @@ Sky's the limit with your implementation but there are 2 main tasks that will be
 - Expiry is any valid date
 - Handle appropriately when submitted fields are invalid
 
-### Code Structure and Architecture
+### Code Structure and Architecture for entire project including 3rd party API implementation
 - No need to implement actual 3rd party API calls, pseudocode and mocked responses should be sufficient
 - At a minimum, define necessary entities and method signatures to show the use and flow of data
 
