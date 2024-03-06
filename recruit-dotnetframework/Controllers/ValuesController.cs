@@ -22,8 +22,9 @@ namespace recruit_dotnetframework.Controllers
         }
 
         // POST api/values
-        public void Post([FromBody] string value)
+        public IHttpActionResult Post([FromBody] CreditCardDetails creditCardDetails)
         {
+            return Ok("Successfull processing!!!");
         }
 
         // PUT api/values/5
