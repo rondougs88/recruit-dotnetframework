@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace recruit_dotnetframework.Controllers
@@ -28,6 +29,12 @@ namespace recruit_dotnetframework.Controllers
             if (errorMessages.Count > 0)
             {
                 return BadRequest(string.Join(". ", errorMessages));
+            }
+
+            var visaResponse = Task.Run(() => CreditCardDetailsInputValidator.ValidateCreditCardUsingExternalApi(creditCardDetails)).Result;
+            if (visaResponse == null)
+            {
+                return BadRequest("Visa credit card validation failed. Please check your submitted card details and try again.");
             }
 
             return Ok("Successfull processing!!!");

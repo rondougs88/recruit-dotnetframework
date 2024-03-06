@@ -162,6 +162,7 @@
     </Compile>
     <Compile Include="Helpers\CreditCardDetailsInputValidator.cs" />
     <Compile Include="Models\CreditCardDetails.cs" />
+    <Compile Include="Models\VisaResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
