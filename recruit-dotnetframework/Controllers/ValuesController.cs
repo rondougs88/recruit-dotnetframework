@@ -24,6 +24,12 @@ namespace recruit_dotnetframework.Controllers
         // POST api/values
         public IHttpActionResult Post([FromBody] CreditCardDetails creditCardDetails)
         {
+            var errorMessages = CreditCardDetailsInputValidator.ValidateCreditCardDetails(creditCardDetails);
+            if (errorMessages.Count > 0)
+            {
+                return BadRequest(string.Join(". ", errorMessages));
+            }
+
             return Ok("Successfull processing!!!");
         }
 
